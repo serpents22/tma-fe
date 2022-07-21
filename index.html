@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/date-1.1.2/datatables.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/style/style.css">
+  <link rel="stylesheet" href="/style/chart.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/datetime/1.1.2/css/dataTables.dateTime.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <title>TMA TEST</title>
+</head>
+<body>
+  <header class="container">
+	  <div class="container-fluid mt-5">
+      <div class="row align-items-end">
+        <div class="col-auto">
+	  	    <label>From</label>
+	  	    <input type="text" class="form-control" placeholder="Start"  id="startDate"/>
+        </div>
+        <div class="col-auto">
+          <label>To</label>
+	  	    <input type="text" class="form-control" placeholder="End"  id="endDate"/>
+        </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-primary" id="filter">Filter</button>
+        </div>
+        <div class="col-auto ms-auto">
+          <input type="text" class="form-control" placeholder="search anything"  id="search"/>
+        </div>
+      </div>
+    </div>
+    
+  </header>
+  <main class="container">
+    <div class="container-fluid mt-2">
+      <table id="performances" class="table-hover table">
+        <thead>
+          <tr id="thRow">
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <div id="container-column"></div>
+      </div>
+      <div class="col">
+        <div id="container-pie"></div>
+      </div>
+      <div class="col">
+        <div id="container-area"></div>
+      </div>
+    </div>
+  </main>
+  <script src="script/ajax.js"></script>
+  <script src="script/dataTables.js"></script>
+  <script src="script/dateRange.js"></script>
+  <script src="script/highCharts.js"></script>
+
+</body>
+</html>
+
+<script>
+  const tHeadDatas = ['DATE', 'TARGET TIME (HOUR)', 'WORK TIME (HOUR)', 'ACHIEVEMENT (PERCENTAGE)', 'OVERTIME (HOUR)', 'DAY']
+  const tHeadRow = document.getElementById('thRow');
+      for (let tHeadData of tHeadDatas) {
+        const th = document.createElement('th');
+        // th.classList.add("col")
+        th.innerHTML = tHeadData;
+        tHeadRow.appendChild(th);
+      }
+</script>

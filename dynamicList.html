@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Hello</title>
+  </head>
+  <body>
+    <h1>
+      Hello,
+    </h1>
+    <ul id='helloList'>
+    </ul>
+    <script>
+      const names = ['Mary', 'John', 'Jane'];
+      const helloList = document.getElementById('helloList');
+      for (let name of names) {
+        const li = document.createElement('li');
+        li.innerHTML = name;
+        helloList.appendChild(li);
+      }
+    </script>
+  </body>
+</html>

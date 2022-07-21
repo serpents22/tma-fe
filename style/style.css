@@ -1,0 +1,16 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+thead {
+  background-color: #EAF0F7;
+  color: #616D76;
+}
+
+tr {
+  background-color: #F5F8FA;
+}
